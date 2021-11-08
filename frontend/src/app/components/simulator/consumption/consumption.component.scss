@@ -1,0 +1,34 @@
+.container{
+    max-width: 100%;
+    width: 100%;
+    height: 700px;
+    text-align: center;
+    .title{
+        padding-top: 50px;
+        color: white;
+        font-size: 40px;
+    }
+    .step{
+        color: white;
+        font-size: 25px;
+    }
+    .input-group{
+        margin-left: 43%;
+        margin-top: 100px;
+        display: block;
+        .textbox{
+            width: 250px;
+        }
+        select{
+            margin-top: 20px;
+            width: 250px;
+            text-align: center;
+        }
+    }
+    .buttons{
+        margin-top: 150px;
+        .continue{
+            margin-top: 10px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<body>
+    <app-navbar></app-navbar>
+    <div class="container" *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, white 100%)'}">
+        <div class="labels">
+            <div class="title"><label>Calculadora de ahorro</label></div>
+            <div class="step"><label>PASO 1: CONSUMO</label></div>
+        </div>
+        <div class="input-group">
+            <div class="textbox">
+                <input type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected>Anual</option>
+                <option value="1">Mensual</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <div class=""><button class="btn btn-primary">Consumo personalizado</button></div>
+            <div class="continue"><button class="btn btn-primary" [routerLink]="['/ubication']">Continuar</button></div>
+        </div>
+    </div>
+</body>

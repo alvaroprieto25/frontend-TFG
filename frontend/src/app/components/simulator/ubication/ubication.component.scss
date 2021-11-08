@@ -1,0 +1,30 @@
+.container{
+    max-width: 100%;
+    width: 100%;
+    height: 700px;
+    text-align: center;
+    .title{
+        padding-top: 50px;
+        color: white;
+        font-size: 40px;
+    }
+    .step{
+        color: white;
+        font-size: 25px;
+    }
+    .input-group{
+        margin-left: 29%;
+        margin-top: 50px;
+        display: block;
+        agm-map {
+            height: 450px;
+            width: 800px;
+        }
+    }
+    .buttons{
+        margin-top: 100px;
+        .continue{
+            margin-top: 10px;
+        }
+    }
+}

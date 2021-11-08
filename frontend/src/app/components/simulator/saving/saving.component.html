@@ -1,0 +1,13 @@
+<body>
+    <app-navbar></app-navbar>
+    <div class="container" *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, white 100%)'}">
+        <div class="labels">
+            <div class="title"><label>Calculadora de ahorro</label></div>
+            <div class="step"><label>PASO 4: TIPO DE AHORRO</label></div>
+        </div>
+        <div class="input-group">
+            <button class="btn btn-primary"  [routerLink]="['/result']">Superhabit</button>
+            <button class="btn btn-primary"  [routerLink]="['/result']">Excedente 0</button>
+        </div>
+    </div>
+</body>

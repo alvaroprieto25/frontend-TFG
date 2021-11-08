@@ -1,0 +1,21 @@
+<body>
+    <app-navbar></app-navbar>
+    <div class="container" *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, white 100%)'}">
+        <div class="labels">
+            <div class="title"><label>Calculadora de ahorro</label></div>
+            <div class="step"><label>PASO 3: SUPERFICIE</label></div>
+        </div>
+        <div class="input-group">
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected>Selecciona la orientación</option>
+                <option value="1">Norte</option>
+                <option value="2">Sur</option>
+                <option value="3">Este</option>
+                <option value="4">Oeste</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <div class="continue"><button class="btn btn-primary" [routerLink]="['/saving']">Continuar</button></div>
+        </div>
+    </div>
+</body>

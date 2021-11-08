@@ -1,0 +1,11 @@
+<body>
+    <app-navbar></app-navbar>
+    <div class="container" *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, white 100%)'}">
+        <div class="label">
+            <label [ngStyle]="{'font-family': style.font}"><strong>DISEÑA TU INSTALACIÓN FOTOVOLTAICA</strong></label>
+        </div>
+        <div class="button" >
+            <button [ngStyle]="{'font-family': style.font}" class="btn" style="border-bottom: 2px solid black; border-right: 2px solid black;" [routerLink]="['/consumption']"><strong>IR AL SIMULADOR</strong></button>
+        </div>
+    </div>
+</body>
