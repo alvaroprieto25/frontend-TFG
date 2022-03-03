@@ -1,8 +1,23 @@
-<body>
+<body *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, ' + style.secondary + ' 100%)', 'height':'100vh'}">
     <app-navbar></app-navbar>
-    <div class="container" *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, white 100%)'}">
-        <div class="labels">
-            <div class="title"><label>Resultados</label></div>
+    <div class="container">
+        <div class="card">
+            <div class="labels">
+                <div class="title"><label>Resultados</label></div>
+                <div class="label1"><label>Realizando una <strong>instalación completa</strong> se conseguiría un <strong>AHORRO</strong> en tu factura del:</label></div>
+                <div class="label2"><label>47%</label></div>
+                <div class="label3"><label>Si estás insteresado, a continuación puedes obtener un presupuesto</label></div>
+            </div>
+            <div class="buttons">
+                <div class="firstline">
+                    <button class="btn btn-primary" (click)="contactButton()" [ngStyle]="{'background-color': style.primary, 'border':'none'}">Contacta con nosotros</button>
+                    <button class="btn btn-light" (click)="backHome()">Nueva simulacion</button>
+                    <button class="btn btn-primary" (click)="budgetButton()" [ngStyle]="{'background-color': style.primary, 'border':'none'}">Generar presupeusto</button>
+                </div>
+                <div class="secondline">
+                    <button class="btn btn-light">Volver</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

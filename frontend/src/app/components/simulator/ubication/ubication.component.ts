@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Style } from 'src/app/interfaces/Style';
 import { DataService } from 'src/app/services/data.service';
 
@@ -17,18 +18,29 @@ export class UbicationComponent implements OnInit {
   loadedData = false;
   lat = 38.348218;
   lng =  -0.494039;
+  business = "";
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.dataService.getBusinessStyle(6).subscribe(data => {
-      this.style = data;
-      this.loadedData = true;
-    });
+    this.activatedRoute.queryParams
+      .subscribe(params => {
+        this.business = params.business;
+        this.dataService.getBusinessStyle(params.business).subscribe(data => {
+          this.style = data;
+          this.loadedData = true;
+        }); 
+      }
+    );
   }
 
   onMapReady(map: any){
     this.initDrawingManager(map);
+  }
+
+  submit(){
+    console.log(localStorage.getItem('coords'));
+    this.router.navigate(['/surface'], {queryParams: {business: this.business}});
   }
 
   initDrawingManager(map: any) {
@@ -50,7 +62,7 @@ export class UbicationComponent implements OnInit {
       // Polygon drawn
       if (e.type === google.maps.drawing.OverlayType.POLYGON) {
         //this is the coordinate, you can assign it to a variable or pass into another function.
-        alert(e.overlay.getPath().getArray());
+        localStorage.setItem('coords', e.overlay.getPath().getArray());
       }
     });
   }

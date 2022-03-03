@@ -1,22 +1,44 @@
-<body>
+<body *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, ' + style.secondary + ' 100%)', 'height':'100vh'}">
     <app-navbar></app-navbar>
-    <div class="container" *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, white 100%)'}">
-        <div class="labels">
-            <div class="title"><label>Calculadora de ahorro</label></div>
-            <div class="step"><label>PASO 1: CONSUMO</label></div>
-        </div>
-        <div class="input-group">
-            <div class="textbox">
-                <input type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+    <div class="container">
+        <div class="card">
+            <div class="labels">
+                <div class="title"><label>CALCULADORA DE AHORRO</label></div>
+                <div class="step"><label>PASO 1: CONSUMO</label></div>
             </div>
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option selected>Anual</option>
-                <option value="1">Mensual</option>
-            </select>
+            <div class="input-group">
+                <form [formGroup]="consumptionForm">
+                    <div class="textbox">
+                        <input type="text" class="form-control" placeholder="kw" formControlName="consumption" aria-describedby="inputGroup-sizing-default">
+                        <img src="assets/icons/help.png" alt="" (click)="toggleCard1()">
+                    </div>
+                    <div class="select">
+                        <select class="form-select form-select-lg mb-3" formControlName="type" aria-label=".form-select-lg example">
+                            <option selected>Anual</option>
+                            <option>Mensual</option>
+                        </select>
+                        <img src="assets/icons/help.png" alt="" (click)="toggleCard2()">
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="card1" class="card-info">
+                <div class="card-body">
+                    <img src="assets/icons/close.jpg" alt="" (click)="toggleCard1()">
+                    <h5 class="card-title">KW</h5>
+                    <p class="card-text">Numero de kilovatios consumidos</p>
+                </div>
+            </div>
+            <div *ngIf="card2" class="card-info">
+                <div class="card-body">
+                    <img src="assets/icons/close.jpg" alt="" (click)="toggleCard2()">
+                    <h5 class="card-title">Plazo</h5>
+                    <p class="card-text">Plazo en el que se consumen los kilovatios</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class=""><button class="btn btn-primary" (click)="customConsumptionButton()" [ngStyle]="{'background-color': style.primary, 'border':'none'}">Consumo personalizado</button></div>
+                <div class="continue"><button class="btn btn-primary" (click)="submit()" [ngStyle]="{'background-color': style.primary, 'border':'none'}">Continuar</button></div>
+            </div>
         </div>
-        <div class="buttons">
-            <div class=""><button class="btn btn-primary">Consumo personalizado</button></div>
-            <div class="continue"><button class="btn btn-primary" [routerLink]="['/ubication']">Continuar</button></div>
-        </div>
-    </div>
+    </div>      
 </body>

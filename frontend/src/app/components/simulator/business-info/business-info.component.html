@@ -1,0 +1,32 @@
+<body *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, ' + style.secondary + ' 100%)', 'height':'100vh'}">
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="card">
+            <div class="primary">
+                <div class="logo">
+                    <img src="{{style.logo}}" alt="">
+                </div>
+                <div class="title">
+                    <h1>{{businessData.name}}</h1>
+                </div>
+            </div>
+            <div class="secondary">
+                <div>
+                    <label for="">Phone: {{businessData.phone}}</label>
+                </div>
+                <div>
+                    <label for="">Correo: {{businessData.email}}</label>
+                </div>
+                <div>
+                    <label for="">Direccion: {{businessData.adress}}</label>
+                </div>
+                <div>
+                    <label for="">Poblation: {{businessData.poblation}}</label>
+                </div>
+            </div>
+            <div class="terciary">
+                <button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="goBack()">Volver</button>
+            </div>
+        </div>
+    </div>
+</body>

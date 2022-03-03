@@ -1,0 +1,27 @@
+<body *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, ' + style.secondary + ' 100%)', 'height':'100vh'}">
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="card">
+            <div class="labels">
+                <div class="title"><label>CALCULADORA DE AHORRO</label></div>
+                <div class="step"><label>PASO 1: CONSUMO PERSONALIZADO</label></div>
+            </div>
+            <div class="input-group">
+                <form [formGroup]="customConsumptionForm">
+                    <div class="textbox">
+                        <input type="text" class="form-control" placeholder="nombre" formControlName="nombre" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" placeholder="consumo (kw/h)" formControlName="consumo" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" placeholder="uso (h)" formControlName="uso" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border': 'none'}" (click)="addNewConsumption()">Add</button>
+                </form>
+            </div>
+            <div class="show-consumption">
+                <input type="text" class="form-control" value="{{this.totalConsumption}}" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="continue-group">
+                <button class="btn btn-primary" (click)="nextPage()"  [ngStyle]="{'background-color': style.primary, 'border': 'none'}">Continue</button>
+            </div>
+        </div>
+    </div>
+</body>

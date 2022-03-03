@@ -5,7 +5,32 @@
     text-align: center;
     .title{
         padding-top: 50px;
-        color: white;
         font-size: 40px;
     }
+    .label1{
+        font-size: 30px;
+    }
+    .label2{
+        font-size: 100px;
+    }
+    .buttons{
+        margin-top: 40px;
+        .firstline{
+            button{
+                margin: 10px;
+            }
+        }
+        .secondline{
+            margin-top: 30px;
+        }
+    }
+}
+
+.card{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100%;
+    width: 80%;
+    border-radius: 30px;
 }

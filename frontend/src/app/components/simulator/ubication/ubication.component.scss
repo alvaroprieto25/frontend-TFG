@@ -4,17 +4,15 @@
     height: 700px;
     text-align: center;
     .title{
-        padding-top: 50px;
-        color: white;
+        padding-top: 25px;
         font-size: 40px;
     }
     .step{
-        color: white;
         font-size: 25px;
     }
     .input-group{
-        margin-left: 29%;
-        margin-top: 50px;
+        margin-left: 25%;
+        margin-top: 10px;
         display: block;
         agm-map {
             height: 450px;
@@ -22,9 +20,18 @@
         }
     }
     .buttons{
-        margin-top: 100px;
+        margin-top: 25px;
         .continue{
             margin-top: 10px;
         }
     }
+}
+
+.card{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100%;
+    width: 80%;
+    border-radius: 30px;
 }

@@ -5,20 +5,27 @@
     text-align: center;
     .title{
         padding-top: 50px;
-        color: white;
         font-size: 40px;
     }
     .step{
-        color: white;
         font-size: 25px;
     }
     .input-group{
         margin-top: 100px;
         display: block;
         button{
-            border-radius: 20% !important;
+            border-radius: 50px !important;
             margin: 50px;
             padding: 50px;
         }
     }
+}
+
+.card{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100%;
+    width: 80%;
+    border-radius: 30px;
 }

@@ -1,16 +1,18 @@
-<body>
+<body *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, ' + style.secondary + ' 100%)', 'height':'100vh'}">
     <app-navbar></app-navbar>
-    <div class="container" *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, white 100%)'}">
-        <div class="labels">
-            <div class="title"><label>Calculadora de ahorro</label></div>
-            <div class="step"><label>PASO 2: UBICACIÓN</label></div>
-        </div>
-        <div class="input-group">
-            <agm-map [zoom]="15" [latitude]="lat" [longitude]="lng" (mapReady)="onMapReady($event)">
-            </agm-map>
-        </div>
-        <div class="buttons">
-            <div class="continue"><button class="btn btn-primary" [routerLink]="['/surface']">Continuar</button></div>
+    <div class="container">
+        <div class="card">
+            <div class="labels">
+                <div class="title"><label>CALCULADORA DE AHORRO</label></div>
+                <div class="step"><label>PASO 2: UBICACIÓN</label></div>
+            </div>
+            <div class="input-group">
+                <agm-map [zoom]="15" [latitude]="lat" [longitude]="lng" (mapReady)="onMapReady($event)">
+                </agm-map>
+            </div>
+            <div class="buttons">
+                <div class="continue"><button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="submit()">Continuar</button></div>
+            </div>
         </div>
     </div>
 </body>
