@@ -1,0 +1,48 @@
+<body *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, ' + style.secondary + ' 100%)', 'height':'100vh'}">
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="card">
+            <div class="primary">
+                <div class="logo">
+                    <img src="{{style.logo}}" alt="">
+                </div>
+                <div class="title">
+                    <h1>{{businessData.name}}</h1>
+                </div>
+            </div>
+            <div class="secondary overflow-auto">
+                <table class="table">
+                    <thead>
+                        <th>ID</th>
+                        <th>Consumption</th>
+                        <th>Coordinates</th>
+                        <th>surface</th>
+                        <th>orientation</th>
+                        <th>type</th>
+                        <th>nPanels</th>
+                        <th>date</th>
+                        <th>Budget</th>
+                        <th>Client</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let project of projects">
+                            <th>{{project.id}}</th>
+                            <td>{{project.consumption}}</td>
+                            <td><button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="goMaps(project.coordinates)">Ver mapa</button></td>
+                            <td>{{project.surface}}</td>
+                            <td>{{project.orientation}}</td>
+                            <th>{{project.type}}</th>
+                            <td>{{project.nPanels}}</td>
+                            <td>{{project.date}}</td>
+                            <td><button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="detailBudget(project.id)">Budget</button></td>
+                            <td><button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="detailClient(project.id)">Client</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="terciary">
+                <button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="goBack()">Volver</button>  
+            </div>
+        </div>
+    </div>
+</body>

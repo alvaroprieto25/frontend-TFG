@@ -8,6 +8,11 @@
             </div>
             <div class="input-group">
                 <form [formGroup]="customConsumptionForm">
+                    <div class="titles">
+                        <label for="">Nombre del Dispositivo</label>
+                        <label for="">Consumo (kw/h)</label>
+                        <label for="">Uso (h)</label>
+                    </div>
                     <div class="textbox">
                         <input type="text" class="form-control" placeholder="nombre" formControlName="nombre" aria-describedby="inputGroup-sizing-default">
                         <input type="text" class="form-control" placeholder="consumo (kw/h)" formControlName="consumo" aria-describedby="inputGroup-sizing-default">
@@ -16,7 +21,10 @@
                     <button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border': 'none'}" (click)="addNewConsumption()">Add</button>
                 </form>
             </div>
-            <div class="show-consumption">
+            <div class="show-consumption overflow-auto">
+                <div class="list" *ngFor="let a of added">
+                    <strong>Dispositivo:</strong> {{a.nombre}} <strong>Consumo por hora:</strong> {{a.consumo}} <strong>Usos:</strong> {{a.uso}}
+                </div>
                 <input type="text" class="form-control" value="{{this.totalConsumption}}" aria-describedby="inputGroup-sizing-default">
             </div>
             <div class="continue-group">

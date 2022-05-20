@@ -1,0 +1,23 @@
+<body *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, ' + style.secondary + ' 100%)', 'height':'100vh'}">
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="card" style="text-align: center;">
+            <div class="primary">
+                <h1>SIGN IN</h1>
+            </div>
+            <div class="secondary">
+                <form [formGroup]="loginForm">
+                    <input type="text" placeholder="EMAIL" formControlName="email">
+                    <input type="text" placeholder="PASSWORD" formControlName="password">
+                </form>
+            </div>
+            <div class="terciary">
+                <button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="login()">Login</button>
+            </div>
+            <div class="extra">
+                <div><label for="">¿Eres una nueva empresa?</label></div>
+                <div><button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="register()">CREA TU SIMULADOR</button></div>
+            </div>
+        </div>
+    </div>
+</body>

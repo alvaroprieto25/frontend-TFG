@@ -1,0 +1,91 @@
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="primary">
+                <h1>CREA TU PROPIO SIMULADOR</h1>
+            </div>
+            <div class="secondary">
+                <form action="">
+                    <div *ngIf="first"> 
+                        <div>
+                            <label for="">Email</label>
+                            <input type="text" placeholder="email">
+                        </div>
+                        <div>
+                            <label for="">Contraseña</label>
+                            <input type="text" placeholder="password">
+                        </div>
+                        <div>
+                            <label for="">Repetir Contraseña</label>
+                            <input type="text" placeholder="repeat password">
+                        </div>
+                        <div>
+                            <label for="">Nombre de la empresa</label>
+                            <input type="text" placeholder="name">
+                        </div>
+                        <div>
+                            <label for="">Telefono</label>
+                            <input type="text" placeholder="phone">
+                        </div>
+                        <div>
+                            <label for="">Poblacion</label>
+                            <input type="text" placeholder="poblation">
+                        </div>
+                        <div>
+                            <label for="">Direccion</label>
+                            <input type="text" placeholder="adress">
+                        </div>
+                    </div>
+                    <div *ngIf="second">
+                        <div>
+                            <label for="">Precio de los paneles</label>
+                            <input type="text" placeholder="price solar panel">
+                        </div>
+                        <div>
+                            <label for="">Precio de la instalacion</label>
+                            <input type="text" placeholder="price installation">
+                        </div>
+                        <div>
+                            <label for="">Capacidad de los paneles</label>
+                            <input type="text" placeholder="solar panel capacity">
+                        </div>
+                    </div>
+                    <div *ngIf="thrid">
+                        <div>
+                            <label for="">Logo de la empresa</label>
+                            <input type="text" placeholder="logo link">
+                        </div>
+                        <div>
+                            <label for="">Color principal</label>
+                            <input type="text" placeholder="Primary color">
+                        </div>
+                        <div>
+                            <label for="">Color secundario</label>
+                            <input type="text" placeholder="Secondary color">
+                        </div>
+                        <div>
+                            <label for="">Color terciario</label>
+                            <input type="text" placeholder="Terciarey color">
+                        </div>
+                        <div>
+                            <label for="">Fuente</label>
+                            <input type="text" placeholder="Font family">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="terciary">
+                <div *ngIf="!first">
+                    <button class="btn btn-primary" (click)="back()">Atras</button>
+                </div>
+                <div *ngIf="!thrid">
+                    <button class="btn btn-primary" (click)="continue()">Continue</button>
+                </div>
+                <div *ngIf="thrid">
+                    <button class="btn btn-primary" (click)="submit()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

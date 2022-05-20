@@ -1,0 +1,183 @@
+.container{
+    max-width: 100%;
+    width: 100%;
+    height: 700px;
+
+    .secondary{
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 5%;
+
+        .top{
+            display: flex;
+            .logo{
+                display: block;
+                img{
+                    border: 1px solid black;
+                    height: 50px;
+                    border-radius: 200px;
+                }
+            }
+        
+            .title{
+                margin-left: 2%;
+                margin-top: 2%;
+                display: block;
+            }
+        }
+
+        .project{
+            margin-left: 2%;
+            margin-right: 2%;
+            .consumption{
+                display: flex;
+
+                .label{
+                    display: block;
+                    width: 1000px;
+                }
+    
+                .data{
+                    display: block;
+                }
+            }
+            
+            .surface{
+                display: flex;
+
+                .label{
+                    display: block;
+                    width: 1000px;
+                }
+    
+                .data{
+                    display: block;
+                }
+            }
+
+            .orientation{
+                display: flex;
+
+                .label{
+                    display: block;
+                    width: 1000px;
+                }
+    
+                .data{
+                    display: block;
+                }
+            }
+
+            .type{
+                display: flex;
+
+                .label{
+                    display: block;
+                    width: 1000px;
+                }
+    
+                .data{
+                    display: block;
+                }
+            }
+
+            .nPanels{
+                display: flex;
+
+                .label{
+                    display: block;
+                    width: 1000px;
+                }
+
+                .data{
+                    display: block;
+                }
+            }
+        }
+
+        .client{
+            margin-left: 2%;
+            margin-top: 3%;
+            margin-right: 2%;
+            .name{
+                display: flex;
+
+                .label{
+                    display: block;
+                    width: 1000px;
+                }
+
+                .data{
+                    display: block;
+                }
+            }
+            .surname{
+                display: flex;
+
+                .label{
+                    display: block;
+                    width: 1000px;
+                }
+
+                .data{
+                    display: block;
+                }
+            }
+            .email{
+                display: flex;
+
+                .label{
+                    display: block;
+                    width: 1000px;
+                }
+
+                .data{
+                    display: block;
+                }
+            }
+            .phone{
+                display: flex;
+
+                .label{
+                    display: block;
+                    width: 1000px;
+                }
+
+                .data{
+                    display: block;
+                }
+            }
+        }
+
+        .subtotal{
+            display: flex;
+            margin-bottom: 5%;
+            margin-left: 2%;
+            margin-right: 2%;
+            .label{
+                display: block;
+                width: 1000px;
+            }
+
+            .data{
+                display: block;
+            }
+        }
+    }
+
+    .terciary{
+        margin-top:2%;
+        text-align: center;
+    }
+
+    
+}
+
+.card{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100%;
+    width: 80%;
+    border-radius: 30px;
+}

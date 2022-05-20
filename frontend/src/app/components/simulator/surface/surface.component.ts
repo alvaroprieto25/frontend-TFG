@@ -18,12 +18,17 @@ export class SurfaceComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   surfaceForm = new FormGroup({
-    surface: new FormControl()
+    surface: new FormControl(),
+    poblation: new FormControl(),
+    adress: new FormControl()
   });
 
   ngOnInit(): void {
     this.activatedRoute.queryParams
       .subscribe(params => {
+        if(!params.business){
+          this.router.navigate(['/error']);
+        }
         this.business = params.business;
         this.dataService.getBusinessStyle(params.business).subscribe(data => {
           this.style = data;
@@ -34,8 +39,10 @@ export class SurfaceComponent implements OnInit {
   }
 
   submit(){
-    localStorage.setItem('surface', this.surfaceForm.value.surface)
-    this.router.navigate(['/saving'], {queryParams: {business: this.business}});
+    localStorage.setItem('orientation', this.surfaceForm.value.surface)
+    localStorage.setItem('poblation', this.surfaceForm.value.poblation)
+    localStorage.setItem('adress', this.surfaceForm.value.adress)
+    this.router.navigate(['/ubication'], {queryParams: {business: this.business}});
   }
 
 }

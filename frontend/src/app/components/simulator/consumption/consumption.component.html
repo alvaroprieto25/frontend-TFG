@@ -8,14 +8,21 @@
             </div>
             <div class="input-group">
                 <form [formGroup]="consumptionForm">
-                    <div class="textbox">
-                        <input type="text" class="form-control" placeholder="kw" formControlName="consumption" aria-describedby="inputGroup-sizing-default">
+                    <div class="textbox1">
+                        <label for="">PRECIO FACTURA</label>
+                        <input type="text" class="form-control" placeholder="PRECIO FACTURA" formControlName="price" aria-describedby="inputGroup-sizing-default">
+                        <img src="assets/icons/help.png" alt="" (click)="toggleCard3()">
+                    </div>
+                    <div class="textbox2">
+                        <label for="">CONSUMO</label>
+                        <input type="text" class="form-control" placeholder="KW CONSUMIDOS" formControlName="consumption" aria-describedby="inputGroup-sizing-default">
                         <img src="assets/icons/help.png" alt="" (click)="toggleCard1()">
                     </div>
                     <div class="select">
+                        <label for="">PLAZO</label>
                         <select class="form-select form-select-lg mb-3" formControlName="type" aria-label=".form-select-lg example">
-                            <option selected>Anual</option>
-                            <option>Mensual</option>
+                            <option selected>ANUAL</option>
+                            <option>MENSUAL</option>
                         </select>
                         <img src="assets/icons/help.png" alt="" (click)="toggleCard2()">
                     </div>
@@ -33,6 +40,13 @@
                     <img src="assets/icons/close.jpg" alt="" (click)="toggleCard2()">
                     <h5 class="card-title">Plazo</h5>
                     <p class="card-text">Plazo en el que se consumen los kilovatios</p>
+                </div>
+            </div>
+            <div *ngIf="card3" class="card-info">
+                <div class="card-body">
+                    <img src="assets/icons/close.jpg" alt="" (click)="toggleCard3()">
+                    <h5 class="card-title">Precio</h5>
+                    <p class="card-text">Precio (medio) mensual en tu factura de la luz</p>
                 </div>
             </div>
             <div class="buttons">

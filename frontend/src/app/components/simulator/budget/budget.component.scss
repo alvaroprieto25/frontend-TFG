@@ -12,11 +12,25 @@
     }
 
     .secondary{
-        
+        margin-top: 60px;
+        div{
+            margin: 20px;
+            input{
+                height: 35px;
+                width: 300px;
+                border: none;
+                border-radius: 15px;
+                background-color: beige;
+                text-align: center;
+            }
+        }
     }
 
     .terciary{
-        margin-top: 5%;
+        margin-top: 4%;
+        .submit{
+            margin: 10px;
+        }
     }
 
 }

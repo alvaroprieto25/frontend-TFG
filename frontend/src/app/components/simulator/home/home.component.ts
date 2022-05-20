@@ -21,6 +21,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams
       .subscribe(params => {
+        if(!params.business){
+          this.router.navigate(['/error']);
+        }
         this.business = params.business;
         this.dataService.getBusinessStyle(params.business).subscribe(data => {
           this.style = data;

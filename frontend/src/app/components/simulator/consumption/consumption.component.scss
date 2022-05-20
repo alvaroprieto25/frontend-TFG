@@ -15,7 +15,28 @@
         margin-left: 41%;
         margin-top: 50px;
         display: block;
-        .textbox{
+        width: 280px;
+        text-align: center;
+
+        .textbox1{
+            width: 280px;
+            label{
+                margin-left: 0;
+            }
+            input{
+                display: inline-block;
+                width: 250px;         
+            }
+            img{
+                margin-left: 10px;
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+            }
+        }
+
+        .textbox2{
+            margin-top: 10px;
             width: 280px;
             input{
                 display: inline-block;
@@ -29,9 +50,9 @@
             }
         }
         .select{
+            margin-top: 20px;
             width: 280px;
             select{
-                margin-top: 20px;
                 width: 250px;
                 text-align: center;
                 display: inline-block;
@@ -59,7 +80,7 @@
         }
     }
     .buttons{
-        margin-top: 150px;
+        margin-top: 100px;
         .continue{
             margin-top: 10px;
         }

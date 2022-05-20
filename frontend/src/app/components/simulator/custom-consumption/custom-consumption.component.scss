@@ -12,8 +12,17 @@
         font-size: 25px;
     }
     .input-group{
-        margin-left: 30%;
+        margin-left: 28%;
         margin-top: 100px;
+        max-width: 500px;
+        .titles{
+            display: flex;
+            width: 680px;
+            label{
+                width: 225px;
+                text-align: left;
+            }
+        }
         .textbox{
             width: 280px;
             display: flex;
@@ -25,13 +34,21 @@
         } 
         button{
             margin-top: 40px;
-            margin-left: 102%;
+
         }
     }
     .show-consumption{
-        margin-top: 50px;
-        width: 200px;
-        margin-left: 44%;
+        margin-top: 25px;
+        width: 500px;
+        margin-left: 525px;
+        .list{
+            margin-bottom: 2%;
+        }
+        input{
+            text-align: center;
+            width: 200px;
+            margin-left: 28%;
+        }
     }
     .continue-group{
         margin-top: 10px;

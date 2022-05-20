@@ -1,0 +1,39 @@
+.container{
+    max-width: 100%;
+    width: 100%;
+    height: 700px;
+    text-align: center;
+    .primary{
+        margin-top: 2%;
+    }
+
+    .secondary{
+        margin-top: 1%;
+        table{
+            td{
+                width: 50%;
+                padding-top: 1%;
+                border: none;
+            }
+        }
+    }
+
+    .terciary{
+        margin-top: 1%;
+        button{
+            margin: 1%;
+            max-width: 33%;
+        }
+    }
+
+    
+}
+
+.card{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100%;
+    width: 80%;
+    border-radius: 30px;
+}

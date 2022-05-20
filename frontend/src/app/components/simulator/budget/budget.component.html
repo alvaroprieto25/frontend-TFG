@@ -6,10 +6,28 @@
                 <div class="title"><label>ADQUIERE TU PRESUPUESTO</label></div>
             </div>
             <div class="secondary">
-
+                <form [formGroup]="budgetForm">
+                    <div class="name">
+                        <input type="text" name="name" placeholder="NOMBRE" formControlName="name" id="name">
+                    </div>
+                    <div class="surname">
+                        <input type="text" name="surname" placeholder="APELLIDOS" formControlName="surname" id="surname">
+                    </div>
+                    <div class="email">
+                        <input type="text" name="email" placeholder="EMAIL" formControlName="email" id="email">
+                    </div>
+                    <div class="phone">
+                        <input type="text" name="phone" placeholder="TELEFONO" formControlName="phone" id="phone">
+                    </div>
+                </form>
             </div>
             <div class="terciary">
-                <button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="goBack()">Volver</button>
+                <div class="submit">
+                    <button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="getBudget()">OBTENER PRESUPUESTO</button>
+                </div>
+                <div class="back">
+                    <button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="goBack()">Volver</button>    
+                </div>
             </div>
         </div>
     </div>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Business } from 'src/app/interfaces/Business';
+import { Style } from 'src/app/interfaces/Style';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-home-business',
@@ -7,9 +11,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeBusinessComponent implements OnInit {
 
-  constructor() { }
+  style!: Style;
+  loadedData = false;
+  business = "";
+  businessData!: Business;
+
+  constructor(private dataService: DataService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.queryParams
+      .subscribe(params => {
+        if(!params.business){
+          this.router.navigate(['/error']);
+        }
+        this.business = params.business;
+        this.dataService.getBusinessStyle(params.business).subscribe(data => {
+          this.style = data;
+          this.loadedData = true;
+        }); 
+        this.dataService.getBusiness(params.business).subscribe(data => {
+          this.businessData = data;
+        });
+      }
+    );
+  }
+
+  goClientList(){
+    this.router.navigate(['/clients-list'], {queryParams: {business: this.business}});
+  }
+
+  goBudgetList(){
+    this.router.navigate(['/budgets-list'], {queryParams: {business: this.business}});
+  }
+
+  goProjectsList(){
+    this.router.navigate(['/projects-list'], {queryParams: {business: this.business}});
   }
 
 }

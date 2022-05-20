@@ -25,6 +25,9 @@ export class UbicationComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams
       .subscribe(params => {
+        if(!params.business){
+          this.router.navigate(['/error']);
+        }
         this.business = params.business;
         this.dataService.getBusinessStyle(params.business).subscribe(data => {
           this.style = data;
@@ -39,8 +42,7 @@ export class UbicationComponent implements OnInit {
   }
 
   submit(){
-    console.log(localStorage.getItem('coords'));
-    this.router.navigate(['/surface'], {queryParams: {business: this.business}});
+    this.router.navigate(['/saving'], {queryParams: {business: this.business}});
   }
 
   initDrawingManager(map: any) {
@@ -63,6 +65,7 @@ export class UbicationComponent implements OnInit {
       if (e.type === google.maps.drawing.OverlayType.POLYGON) {
         //this is the coordinate, you can assign it to a variable or pass into another function.
         localStorage.setItem('coords', e.overlay.getPath().getArray());
+        localStorage.setItem('surface', google.maps.geometry.spherical.computeArea(e.overlay.getPath()));
       }
     });
   }

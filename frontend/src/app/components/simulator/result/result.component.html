@@ -4,18 +4,16 @@
         <div class="card">
             <div class="labels">
                 <div class="title"><label>Resultados</label></div>
-                <div class="label1"><label>Realizando una <strong>instalación completa</strong> se conseguiría un <strong>AHORRO</strong> en tu factura del:</label></div>
-                <div class="label2"><label>47%</label></div>
-                <div class="label3"><label>Si estás insteresado, a continuación puedes obtener un presupuesto</label></div>
+                <div class="label1"><label>Realizando una <strong>instalación completa</strong> el coste APROXIMADO seria de:</label></div>
+                <div class="label2"><label>{{precio}} €</label></div>
+                <div class="label1"><label>Manteniendo su coste antual en la factura de la luz, la instalacion se rentabiliza en un periodo de:</label></div>
+                <div class="label2"><label>{{mesesAhorro}} meses</label></div>
             </div>
             <div class="buttons">
                 <div class="firstline">
                     <button class="btn btn-primary" (click)="contactButton()" [ngStyle]="{'background-color': style.primary, 'border':'none'}">Contacta con nosotros</button>
                     <button class="btn btn-light" (click)="backHome()">Nueva simulacion</button>
                     <button class="btn btn-primary" (click)="budgetButton()" [ngStyle]="{'background-color': style.primary, 'border':'none'}">Generar presupeusto</button>
-                </div>
-                <div class="secondline">
-                    <button class="btn btn-light">Volver</button>
                 </div>
             </div>
         </div>

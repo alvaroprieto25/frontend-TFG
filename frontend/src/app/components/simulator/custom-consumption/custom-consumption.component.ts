@@ -15,6 +15,7 @@ export class CustomConsumptionComponent implements OnInit {
   loadedData = false;
   totalConsumption = 0;
   business = "";
+  added: any = [];
 
   customConsumptionForm = new FormGroup({
     nombre: new FormControl(),
@@ -28,6 +29,9 @@ export class CustomConsumptionComponent implements OnInit {
     localStorage.setItem("consumption", "0");
     this.activatedRoute.queryParams
       .subscribe(params => {
+        if(!params.business){
+          this.router.navigate(['/error']);
+        }
         this.business = params.business;
         this.dataService.getBusinessStyle(params.business).subscribe(data => {
           this.style = data;
@@ -40,14 +44,14 @@ export class CustomConsumptionComponent implements OnInit {
   addNewConsumption(){
     let actualConsumption = localStorage.getItem("consumption");
     let consumo = this.customConsumptionForm.value.consumo * this.customConsumptionForm.value.uso;
+    this.added.push(this.customConsumptionForm.value);
     consumo = consumo + Number(actualConsumption); 
     this.totalConsumption = consumo;
-    console.log(consumo);
     localStorage.setItem("consumption", consumo.toString());
   }
 
   nextPage(){
-    this.router.navigate(['/ubication'], {queryParams: {business: this.business}});
+    this.router.navigate(['/surface'], {queryParams: {business: this.business}});
   }
 
 }

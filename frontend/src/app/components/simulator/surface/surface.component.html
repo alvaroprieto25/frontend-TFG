@@ -4,16 +4,25 @@
         <div class="card">
             <div class="labels">
                 <div class="title"><label>CALCULADORA DE AHORRO</label></div>
-                <div class="step"><label>PASO 3: SUPERFICIE</label></div>
+                <div class="step"><label>PASO 3: UBICACIÓN</label></div>
             </div>
             <div class="input-group">
                 <form [formGroup]="surfaceForm">
+                    <div class="textbox">
+                        <label>POBLACION</label>
+                        <input type="text" class="form-control" placeholder="POBLACION" formControlName="poblation" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="textbox">
+                        <label>DIRECCION</label>
+                        <input type="text" class="form-control" placeholder="DIRECCION" formControlName="adress" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <label>ORIENTACION DE LA SUPERFICIE</label>
                     <select class="form-select form-select-lg mb-3" formControlName="surface" aria-label=".form-select-lg example">
-                        <option selected>Selecciona la orientación</option>
                         <option>Norte</option>
                         <option>Sur</option>
                         <option>Este</option>
                         <option>Oeste</option>
+                        <option>Plana</option>
                     </select>
                 </form>
             </div>

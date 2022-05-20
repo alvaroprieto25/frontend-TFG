@@ -1,0 +1,37 @@
+<body *ngIf="loadedData" [ngStyle]="{'background': 'linear-gradient(' + style.primary + ' 0%, ' + style.secondary + ' 100%)', 'height':'100vh'}">
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="card">
+            <div class="primary">
+                <div class="title">
+                    <h1>Budget info</h1>
+                </div>
+            </div>
+            <div class="secondary">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>ID</td>
+                            <td>{{budgetData.id}}</td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td>{{budgetData.price}}€</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>{{budgetData.discount}}%</td>
+                        </tr>
+                        <tr>
+                            <td>Fecha</td>
+                            <td>{{budgetData.date}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="terciary">
+                <button class="btn btn-primary" [ngStyle]="{'background-color': style.primary, 'border':'none'}" (click)="goBack()">Volver</button> 
+            </div>
+        </div>
+    </div>
+</body>

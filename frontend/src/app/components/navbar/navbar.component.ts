@@ -28,16 +28,18 @@ export class NavbarComponent implements OnInit {
         }); 
         this.dataService.getBusiness(params.business).subscribe(data => {
           this.businessData = data;
-          console.log(this.businessData.name);
         }); 
       }
     );
   }
 
   backHome(){
-    console.log("enrtra");
     localStorage.clear();
     this.router.navigate(['/'], {queryParams: {business: this.business}});
+  }
+
+  goSignIn(){
+    this.router.navigate(['/signin'], {queryParams: {business: this.business}});
   }
 
 }
